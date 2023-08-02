@@ -96,5 +96,5 @@ Note that some low severity issues are not eligible for monetary awards based on
 
 Please note these are general guidelines, and reward decisions are up to the discretion of Mozilla.
 
-[1]: https://hackerone.com/mozilla_critical_services/
-[2]: https://hackerone.com/mozilla_core_services
+[1]: https://hackerone.com/mozilla_critical_services/policy_scopes
+[2]: https://hackerone.com/mozilla_core_services/policy_scopes
