@@ -50,6 +50,8 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
 * External SSRF
 * Open Redirects for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, and `*.firefox.com` in addition to the list of critical and core sites.
 
+**Note that some low severity issues are not eligible for monetary awards based on their impact. We will recognize the reporter by thanking them on their H1 page.**
+
 ## Out of Scope
 
 Although we still appreciate being notified about them, the following issues fall outside the scope of our bug bounty program and are not eligible for bounty awards:
@@ -87,12 +89,11 @@ Although we still appreciate being notified about them, the following issues fal
   * [The site https://ftp.mozilla.org/pub/](https://bugzilla.mozilla.org/show_bug.cgi?id=1783721) and [the site https://archive.mozilla.org/pub/](https://bugzilla.mozilla.org/show_bug.cgi?id=1810203) allow directory listing
   * [Link from accounts.firefox.com to manage email preferences is missing authentication](https://bugzilla.mozilla.org/show_bug.cgi?id=1794310)
   * [Blind SSRF using the pocket save URL feature](https://bugzilla.mozilla.org/show_bug.cgi?id=1810997)
-  * [https://people.mozilla.org/whoami/github/username/68190427 exposes user's GitHub profile information](https://bugzilla.mozilla.org/show_bug.cgi?id=1811757)
-  * [The sites https://community-tc.services.mozilla.com/ and https://firefox-ci-tc.services.mozilla.com/](https://bugzilla.mozilla.org/show_bug.cgi?id=1819389) as well as [the site https://normandy-devtools.services.mozilla.com/] are publicly accessible
+  * [https://people.mozilla.org/whoami/github/username/user_id exposes user's GitHub profile information](https://bugzilla.mozilla.org/show_bug.cgi?id=1811757)
+  * [The sites https://community-tc.services.mozilla.com/ and https://firefox-ci-tc.services.mozilla.com/](https://bugzilla.mozilla.org/show_bug.cgi?id=1819389) as well as the site [normandy-devtools](https://normandy-devtools.services.mozilla.com/) are publicly accessible
 
+## Misc Notes
 We have a bug bounty panel whose members decide whether a report is eligible for bounty and the bounty amount for eligible reports. The panel meets on a weekly basis, except for holidays and vacations, to discuss bounty decisions.
-
-Note that some low severity issues are not eligible for monetary awards based on their impact. We will recognize the reporter by thanking them on our H1 page.
 
 Please note these are general guidelines, and reward decisions are up to the discretion of Mozilla.
 
