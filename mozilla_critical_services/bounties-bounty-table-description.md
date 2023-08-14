@@ -36,7 +36,7 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
  Vulnerabilities which can provide an attacker additional information or positioning that could be used in combination with other vulnerabilities. In addition to issues resulting from the lack of standard defense in depth techniques and security controls.
 
 * XSS (minor)
-* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, and `*.firefox.com` in addition to the list of critical and core sites.
+* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, `*.firefox.com`, `*.mozgcp.net` and `*.mozaws.net` in addition to the list of critical and core sites.
 * SSRF which leads to reaching **internal** network hosts
 * Disclosure of sensitive information which does not expose the user or organization to immediate risk
 * CSRF for minor actions.
@@ -48,7 +48,9 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
 * XSS (blocked by CSP)
 * Clickjacking with demonstrated impact (Lack of clickjacking protection (XFO, CSP) is insufficient to claim a bounty)
 * External SSRF
-* Open Redirects for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, and `*.firefox.com` in addition to the list of critical and core sites.
+* Open Redirects for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, `*.firefox.com`, `*.mozgcp.net` and `*.mozaws.net` in addition to the list of critical and core sites.
+
+**Note that some low severity issues are not eligible for monetary awards based on their impact. We will recognize the reporter by thanking them on their H1 page.**
 
 ## Out of Scope
 
@@ -87,12 +89,11 @@ Although we still appreciate being notified about them, the following issues fal
   * [The site https://ftp.mozilla.org/pub/](https://bugzilla.mozilla.org/show_bug.cgi?id=1783721) and [the site https://archive.mozilla.org/pub/](https://bugzilla.mozilla.org/show_bug.cgi?id=1810203) allow directory listing
   * [Link from accounts.firefox.com to manage email preferences is missing authentication](https://bugzilla.mozilla.org/show_bug.cgi?id=1794310)
   * [Blind SSRF using the pocket save URL feature](https://bugzilla.mozilla.org/show_bug.cgi?id=1810997)
-  * [https://people.mozilla.org/whoami/github/username/68190427 exposes user's GitHub profile information](https://bugzilla.mozilla.org/show_bug.cgi?id=1811757)
-  * [The sites https://community-tc.services.mozilla.com/ and https://firefox-ci-tc.services.mozilla.com/](https://bugzilla.mozilla.org/show_bug.cgi?id=1819389) as well as [the site https://normandy-devtools.services.mozilla.com/] are publicly accessible
+  * [https://people.mozilla.org/whoami/github/username/user_id exposes user's GitHub profile information](https://bugzilla.mozilla.org/show_bug.cgi?id=1811757)
+  * [The sites https://community-tc.services.mozilla.com/ and https://firefox-ci-tc.services.mozilla.com/](https://bugzilla.mozilla.org/show_bug.cgi?id=1819389) as well as the site [normandy-devtools](https://normandy-devtools.services.mozilla.com/) are publicly accessible
 
+## Misc Notes
 We have a bug bounty panel whose members decide whether a report is eligible for bounty and the bounty amount for eligible reports. The panel meets on a weekly basis, except for holidays and vacations, to discuss bounty decisions.
-
-Note that some low severity issues are not eligible for monetary awards based on their impact. We will recognize the reporter by thanking them on our H1 page.
 
 Please note these are general guidelines, and reward decisions are up to the discretion of Mozilla.
 
