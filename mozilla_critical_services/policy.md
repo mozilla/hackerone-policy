@@ -38,8 +38,8 @@ Mozilla will make a best effort to meet the following SLAs for hackers participa
 
 | Type of Response | SLA in business days |
 | ------------- | ------------- |
-| First Response | 2 days |
-| Time to Triage | 2 days |
+| First Response | 5 days |
+| Time to Triage | 10 days |
 | Time to Bounty | 30 days |
 | Time to Resolution | depends on severity and complexity |
 
