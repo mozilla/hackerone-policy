@@ -41,7 +41,7 @@ To be eligible for a reward under this program:
 * Do not threaten or attempt to extort Mozilla. We will not award a bounty if you threaten to withhold the security issue from us or if you threaten to release the vulnerability or any exposed data to the public.
 
 # Appeal Process
-Hackers may appeal the decision made regarding the status of reports only once by providing additional information to the report which demonstrates the impact of the reported issue on the asset. If no additional information is provided then the report status will be final.
+Hackers may appeal the decision made regarding the status of reports only once by commenting on the report and providing additional information to the report which demonstrates the impact of the reported issue on the asset. If no additional information is provided then the report status will be final.
 
 Valid reasons for appeal:
 * The H1 triager closes the report as informative or duplicate and no longer responds to the hacker.
