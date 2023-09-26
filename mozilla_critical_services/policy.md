@@ -1,5 +1,13 @@
-The Mozilla Bug Bounty Program is designed to encourage security research into Mozilla's websites and services and to reward those who find unique and original bugs in our web infrastructure.
+The Mozilla Bug Bounty Program is designed to encourage security research into Mozilla's websites and services and to reward those who find unique and original security bugs in our web infrastructure.
 
+# Table of Contents
+1. Program Scope
+2. Test Plan
+3. Program Rules
+4. Appeal Process
+5. Response Targets
+6. Disclosure Policy
+7. Safe Harbor
 # Program Scope
 
 Please check the list of sites under the Scope section, we would like testing to focus on those sites. Other sites and services are considered out of scope of the program unless the bug is critical (see above for examples of critical issues)
@@ -31,6 +39,13 @@ To be eligible for a reward under this program:
 * All submissions must also abide by [HackerOne Code of Conduct](https://www.hackerone.com/policies/code-of-conduct) and [Mozilla Community Participation Guidelines](https://www.mozilla.org/en-US/about/governance/policies/participation/).
 * Bounties can be donated to charity. Please follow the [HackerOne process](https://docs.hackerone.com/hackers/payments.html#donating-bounties-to-charity) if you would like to donate your bounty money.
 * Do not threaten or attempt to extort Mozilla. We will not award a bounty if you threaten to withhold the security issue from us or if you threaten to release the vulnerability or any exposed data to the public.
+
+# Appeal Process
+Hackers may appeal the decision made regarding the status of reports only once by commenting on the report and providing additional information to the report which demonstrates the impact of the reported issue on the asset. If no additional information is provided then the report status will be final.
+
+Valid reasons for appeal:
+* The H1 triager closes the report as informative or duplicate and no longer responds to the hacker.
+* The report is closed as informative or duplicate and the hacker provides additional information which proves otherwise.
 
 # Response Targets
 
