@@ -1,14 +1,5 @@
 Our rewards are based on the severity of the issue and the criticality of the service or application. 
 
-| Severity Rating | [Critical sites][1] | [Core sites][2] | Other Mozilla sites |
-|-----------------|---------------------|-----------------|---------------------|
-| Critical        | $6000 - $15000      | $3000 - $5000   | $500 - $1000        |
-| High            | $3000 - $6000       | $1000 - $3000   | 0 - $500            |
-| Moderate        | $1000 - $3000       | $500 - $1000    | \-                  |
-| Low             | 0 - $1000           | 0 - $500        | \-                  |
-
-Note : "Other Mozilla sites" excludes community websites
-
 # Severity Definitions and Examples
 
 ## Critical
