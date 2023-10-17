@@ -11,6 +11,8 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
 * Disclosure of secrets in publicly accessible assets
 * Hardcoded credentials for a privileged user
 
+**Note that Critical vulnerabilities found in out of scope assets are awarded in the range of $500-$1000**
+
 ## High
 
  Typically, high severity issues are exploitable web vulnerabilities that can lead to the targeted compromise of a small number of users.
