@@ -29,7 +29,8 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
  Vulnerabilities which can provide an attacker additional information or positioning that could be used in combination with other vulnerabilities. In addition to issues resulting from the lack of standard defense in depth techniques and security controls.
 
 * XSS (minor)
-* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, `*.firefox.com`, `*.mozgcp.net` and `*.mozaws.net` in addition to the list of critical and core sites.
+* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net` and `*.firefox.com` in addition to the list of critical sites.
+  * If the domain is pointing to a claimed instance by another company, then the report will not be eligible for bounty.
 * SSRF which leads to reaching **internal** network hosts
 * Disclosure of sensitive information which does not expose the user or organization to immediate risk
 * CSRF for minor actions.
@@ -41,7 +42,6 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
 * XSS (blocked by CSP)
 * Clickjacking with demonstrated impact (Lack of clickjacking protection (XFO, CSP) is insufficient to claim a bounty)
 * External SSRF
-* Open Redirects for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, `*.firefox.com`, `*.mozgcp.net` and `*.mozaws.net` in addition to the list of critical and core sites.
 
 **Note that some low severity issues are not eligible for monetary awards based on their impact. We will recognize the reporter by thanking them on their H1 page.**
 
