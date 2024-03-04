@@ -67,15 +67,6 @@ We'll try to keep you informed about our progress throughout the process.
 
 # Safe Harbor
 
-Mozilla strongly supports security research into our products and wants to encourage that research.
-
-As a result, we will not threaten or bring any legal action against anyone who makes a good faith effort to comply with this Bug Bounty Program, or for any accidental or good faith violation of this policy. This includes any claim under the DMCA for circumventing technological measures to protect the services and applications eligible under this policy.
-
-As long as you comply with this policy:
-
- * We consider your security research to be "authorized" under the Computer Fraud and Abuse Act,
- * We waive any restrictions in our applicable Terms of Service and [Acceptable Use Policy]( https://www.mozilla.org/en-US/about/legal/acceptable-use/) that would prohibit your participation in this policy, for the limited purpose of your security research under this policy.
-
-We understand that many Mozilla systems and services are interconnected with third-party systems and services. While we can authorize your research on Mozilla's systems and services, and promise that Mozilla will not bring or threaten litigation against you for your efforts under this policy, we cannot authorize efforts on third-party products or guarantee they won't pursue legal action against you. However, if a third party threatens or brings any legal action against you for your efforts under this policy, we are willing to make clear to the Court, the public, or otherwise that we authorized your efforts to test and research the security of Mozilla's eligible systems and services.
+Mozilla strongly supports security research into our products and wants to encourage that research. Therefore, we have enabled the [Gold Standard Safe Harbor policy](https://hackerone.com/mozilla_core_services/safe_harbor) in our program.
 
 If you're not sure whether your conduct complies with this policy, please contact us first at security@mozilla.org and we will do our best to clarify.
