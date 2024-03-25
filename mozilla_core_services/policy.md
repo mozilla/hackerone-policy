@@ -1,1 +1,0 @@
-../mozilla_critical_services/policy.md

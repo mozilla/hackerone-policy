@@ -1,1 +1,0 @@
-../mozilla_critical_services/submit-report-form-impact-template.md

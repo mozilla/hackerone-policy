@@ -8,6 +8,7 @@ The Mozilla Bug Bounty Program is designed to encourage security research into M
 5. Response Targets
 6. Disclosure Policy
 7. Safe Harbor
+
 # Program Scope
 
 Please check the list of sites under the Scope section, we would like testing to focus on those sites. Other sites and services are considered out of scope of the program unless the bug is critical (see above for examples of critical issues)
