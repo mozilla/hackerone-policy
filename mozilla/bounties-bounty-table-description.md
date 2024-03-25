@@ -1,4 +1,4 @@
-Our rewards are based on the severity of the issue and the criticality of the service or application.
+Our rewards are based on the severity of the issue and the criticality of the service or application. The bounty table lists the range of bounties we pay for vulnerabilities in our applications and does not apply on out of scope reports.
 
 # Severity Definitions and Examples
 
@@ -66,7 +66,7 @@ Although we still appreciate being notified about them, the following issues fal
 * Outdated TLS configurations which remain to support downloads from Windows XP systems
 * **Blind** SSRF reports on services that are designed to load resources from the internet
 * Software version disclosure / Banner identification issues / Descriptive error messages or headers (e.g. stack traces, application or server errors).
-* Pocket MacOS application
+* Our bug bounty program is intended to discover security vulnerabilities in our software. Data dumps that include user email and password combinations could be obtained in many ways (indexing services, OSINT tools and web forums) and they do not help us identify any flaw in our software and are therefore out of scope for this bug bounty program. However, data dumps which include Mozilla employees email address and password combinations are in scope and we’d like to receive reports about them.
 * Information disclosure vulnerabilities. Most Mozilla projects and code are open source and content on most sites is intentionally public.
 * Frequently reported issues which do not pose a security risk to users and aren't eligible for a bounty such as the ones tracked in [this tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1830029).
   * [Bugzilla user profile page discloses email address and lots of other info](https://bugzilla.mozilla.org/show_bug.cgi?id=1647545)
