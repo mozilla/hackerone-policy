@@ -88,6 +88,3 @@ Although we still appreciate being notified about them, the following issues fal
 We have a bug bounty panel whose members decide whether a report is eligible for bounty and the bounty amount for eligible reports. The panel meets on a weekly basis, except for holidays and vacations, to discuss bounty decisions.
 
 Please note these are general guidelines, and reward decisions are up to the discretion of Mozilla.
-
-[1]: https://hackerone.com/mozilla_critical_services/policy_scopes
-[2]: https://hackerone.com/mozilla_core_services/policy_scopes
