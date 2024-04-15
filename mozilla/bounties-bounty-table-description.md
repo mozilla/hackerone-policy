@@ -1,4 +1,4 @@
-Our rewards are based on the severity of the issue and the criticality of the service or application. 
+Our rewards are based on the severity of the issue and the criticality of the service or application. The bounty table lists the range of bounties we pay for vulnerabilities in our applications and does not apply on out of scope reports.
 
 # Severity Definitions and Examples
 
@@ -11,7 +11,7 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
 * Disclosure of secrets in publicly accessible assets
 * Hardcoded credentials for a privileged user
 
-**Note that Critical vulnerabilities found in out of scope assets are awarded in the range of $500-$1000**
+**Note that Critical vulnerabilities found in out of scope assets are awarded in the range of $500-$1000.**
 
 ## High
 
@@ -29,8 +29,7 @@ Critical vulnerabilities are urgent security issues that present an ongoing or i
  Vulnerabilities which can provide an attacker additional information or positioning that could be used in combination with other vulnerabilities. In addition to issues resulting from the lack of standard defense in depth techniques and security controls.
 
 * XSS (minor)
-* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net` and `*.firefox.com` in addition to the list of critical sites.
-  * If the domain is pointing to a claimed instance by another company, then the report will not be eligible for bounty.
+* Domain takeovers supported by a proof of concept for `*.mozilla.org`, `*.mozilla.com`, `*.mozilla.net`, `*.firefox.com`, `*.mozgcp.net` and `*.mozaws.net` in addition to the list of sites in scope. If the domain is pointing to a claimed instance by another company, then the report will not be eligible for bounty.
 * SSRF which leads to reaching **internal** network hosts
 * Disclosure of sensitive information which does not expose the user or organization to immediate risk
 * CSRF for minor actions.
@@ -67,7 +66,7 @@ Although we still appreciate being notified about them, the following issues fal
 * Outdated TLS configurations which remain to support downloads from Windows XP systems
 * **Blind** SSRF reports on services that are designed to load resources from the internet
 * Software version disclosure / Banner identification issues / Descriptive error messages or headers (e.g. stack traces, application or server errors).
-* Pocket MacOS application
+* Our bug bounty program is intended to discover security vulnerabilities in our software. Data dumps that include user email and password combinations could be obtained in many ways (indexing services, OSINT tools and web forums) and they do not help us identify any flaw in our software and are therefore out of scope for this bug bounty program. However, data dumps which include Mozilla employees email address and password combinations are in scope and we’d like to receive reports about them.
 * Information disclosure vulnerabilities. Most Mozilla projects and code are open source and content on most sites is intentionally public.
 * Frequently reported issues which do not pose a security risk to users and aren't eligible for a bounty such as the ones tracked in [this tracker bug](https://bugzilla.mozilla.org/show_bug.cgi?id=1830029).
   * [Bugzilla user profile page discloses email address and lots of other info](https://bugzilla.mozilla.org/show_bug.cgi?id=1647545)
@@ -89,6 +88,3 @@ Although we still appreciate being notified about them, the following issues fal
 We have a bug bounty panel whose members decide whether a report is eligible for bounty and the bounty amount for eligible reports. The panel meets on a weekly basis, except for holidays and vacations, to discuss bounty decisions.
 
 Please note these are general guidelines, and reward decisions are up to the discretion of Mozilla.
-
-[1]: https://hackerone.com/mozilla_critical_services/policy_scopes
-[2]: https://hackerone.com/mozilla_core_services/policy_scopes
