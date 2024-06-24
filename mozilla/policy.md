@@ -8,7 +8,7 @@ The Mozilla Bug Bounty Program is designed to encourage security research into M
 5. Appeal Process
 6. Response Targets
 7. Disclosure Policy
-7. Safe Harbor
+8. Safe Harbor
 
 # Program Scope
 
