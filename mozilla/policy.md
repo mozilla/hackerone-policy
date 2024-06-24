@@ -3,11 +3,12 @@ The Mozilla Bug Bounty Program is designed to encourage security research into M
 # Table of Contents
 1. Program Scope
 2. Test Plan
-3. Program Rules
-4. Appeal Process
-5. Response Targets
-6. Disclosure Policy
-7. Safe Harbor
+3. Submission Guidelines
+4. Program Rules
+5. Appeal Process
+6. Response Targets
+7. Disclosure Policy
+8. Safe Harbor
 
 # Program Scope
 
@@ -18,13 +19,19 @@ Please check the list of sites under the Scope section, we would like testing to
 * Whenever it is explicitly stated in our program scope, you are expected to test on the provided instances (e.g. staging) instead of production.
 * We ask that hackers test the application on the staging environment instead of the production environment. This will help ensure that any potential vulnerabilities are identified and addressed before they can be exploited in the production environment. Additionally, testing on the staging environment will help minimize any potential disruption to the production environment.
 
+# Submission Guidelines
+
+* Make sure to review our program policy and scope before submitting to our program.
+* Our program policy lists an extensive list of out of scope vulnerabilities, including [invalid reports which are frequently reported](https://bugzilla.mozilla.org/show_bug.cgi?id=1830029). Make sure the issue you are reporting is not one of them.
+* When reporting information disclosure vulnerabilities, note that most Mozilla projects and code are open source and content on most sites is intentionally public.
+
 # Program Rules
 
 Please provide detailed reports with reproducible steps. If the report is not detailed enough to reproduce the issue, the issue will not be eligible for a reward.
 
 To be eligible for a reward under this program:
 
-* The security bug must be original and previously unreported. 
+* The security bug must be original and previously unreported.
 * The security bug must be a part of Mozilla's code, not the code of a third party. We will pay bounties for vulnerabilities in third-party libraries incorporated into shipped client code or third-party websites utilized by Mozilla.
 * You must not have written the buggy code or otherwise been involved in contributing the buggy code to the Mozilla project.
 * You must be old enough to be eligible to participate in and receive payment from this program in your jurisdiction, or otherwise qualify to receive payment, whether through consent from your parent or guardian or some other way.
