@@ -1,5 +1,3 @@
-The Mozilla Bug Bounty Program is designed to encourage security research into Mozilla's websites and services and to reward those who find unique and original security bugs in our web infrastructure.
-
 # Table of Contents
 1. Program Scope
 2. Test Plan
