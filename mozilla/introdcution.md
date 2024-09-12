@@ -1,0 +1,2 @@
+<!-- Introduction is added under Program Overview -> Introduction in https://hackerone.com/mozilla/edit -->
+The Mozilla Bug Bounty Program is designed to encourage security research into Mozilla's websites and services and to reward those who find unique and original security bugs in our web infrastructure. We appreciate your interest and effort in improving the security of our applications, and look forward to collaborating with you.
