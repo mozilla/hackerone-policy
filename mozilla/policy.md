@@ -69,6 +69,7 @@ We'll try to keep you informed about our progress throughout the process.
 # Disclosure Policy
 
 * Our program discloses security reports when they are fixed and rewarded. We make exceptions in case reporters have a valid reason for not using full disclosure or when they need more time in the research before the report is disclosed. We can consider partial disclosure in those cases, we can discuss and agree on the type of disclosure.
+* Disclosure will be done biweekly, on the first and third Tuesday of the month. This cadence is required to prepare our H1 triage pod for an increase in report volume after disclosing reports.
 * Follow HackerOne's [disclosure guidelines](https://www.hackerone.com/disclosure-guidelines).
 
 # Safe Harbor
