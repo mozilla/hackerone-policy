@@ -14,12 +14,14 @@ Please check the list of sites under the Scope section, we would like testing to
 
 # Test Plan
 
-* Whenever it is explicitly stated in our program scope, you are expected to test on the provided instances (e.g. staging) instead of production.
+* Whenever it is explicitly stated in our program scope, you are expected to test only on the provided instances (e.g. staging) instead of production.
 * We ask that hackers test the application on the staging environment instead of the production environment. This will help ensure that any potential vulnerabilities are identified and addressed before they can be exploited in the production environment. Additionally, testing on the staging environment will help minimize any potential disruption to the production environment.
 
 # Submission Guidelines
 
 * Make sure to review our program policy and scope before submitting to our program.
+* Make sure to use the provided submission template in the report.
+* We would like to have enough information to validate the report, but excessively verbose and long reports which don't include good information also create additional burden on the triage team.
 * Our program policy lists an extensive list of out of scope vulnerabilities, including [invalid reports which are frequently reported](https://bugzilla.mozilla.org/show_bug.cgi?id=1830029). Make sure the issue you are reporting is not one of them.
 * When reporting information disclosure vulnerabilities, note that most Mozilla projects and code are open source and content on most sites is intentionally public.
 
