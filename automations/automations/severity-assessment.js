@@ -21,9 +21,11 @@ function extractSeverityDefinitions(policy) {
  * @returns {{severity: string|null, reasoning: string|null}}
  */
 function parseHaiResponse(response) {
-  const severityMatch = response.match(/\**severity\**\s*:?\s*(critical|high|medium|low|none)/i);
+  const severityMatch = response.match(/\**severity\**\s*:?\s*(critical|high|medium|moderate|low|none)/i);
   const reasoningMatch = response.match(/\**reasoning\**\s*:?\s*(.*)/i);
-  const severity = severityMatch ? severityMatch[1].toLowerCase() : null;
+  // Normalize "moderate" to "medium" for the API
+  const severity = severityMatch ? severityMatch[1].toLowerCase().replace('moderate', 'medium') : null;
+
   const reasoning = reasoningMatch ? reasoningMatch[1] : null;
   return { severity, reasoning };
 }
@@ -32,6 +34,7 @@ exports.extractSeverityDefinitions = extractSeverityDefinitions;
 exports.parseHaiResponse = parseHaiResponse;
 
 exports.run = async ({data, config, apiGet, apiPost, apiPut, promptHai}) => {
+  // Configuration - Set to true for testing (logs only), false for production (makes actual changes)
   const dryRun = true; // <-- Change this to false when ready for production
   const debug = false;  // <-- Set to false to disable debug logging
 
@@ -56,7 +59,9 @@ exports.run = async ({data, config, apiGet, apiPost, apiPut, promptHai}) => {
   // Because it's a "program_small" object which only has the handle
   // As a result we need to fetch the full program
   const programResponse = await apiGet(`/programs/${programId}`);
+  
   if (debug) console.log("DEBUG - programResponse:", JSON.stringify(programResponse, null, 2));
+  
   const programPolicy = programResponse.data.attributes.policy;
 
   // Extract the "Severity Definitions and Examples" section from the policy
@@ -70,7 +75,7 @@ exports.run = async ({data, config, apiGet, apiPost, apiPut, promptHai}) => {
 
   // 2. Prepare context and ask HAI for assessment
   const promptMessage = `
-The following "Severity Definitions and Examples" section lists out 4 severity definitions and examples.
+The following "Severity Definitions and Examples" section lists out the impact and likelihood definitions and examples. The severity is calculated based on the impact and likelihood for the issue.
 The 4 severities are Critical, High, Medium and Low.
 
 ${severityDefinitions}
@@ -78,11 +83,13 @@ ${severityDefinitions}
 # Request
 
 Based on the security vulnerability report above
-and the "Severity Definitions and Examples" section which lists the 4 severities,
+and the "Severity Definitions and Examples" section which lists the impact and likelihood definitions and examples,
 determine which severity this security vulnerability report should have.
 
 Disregard what severity the security vulnerability report asserts and instead use the examples from the Program Policy
 "Severity Definitions and Examples" to determine the correct severity.
+
+When assessing the likelihood of exploiting the issue, you should take into account prerequisites and permissions which are required to exploit the bug.
 
 Please provide your assessment in this exact format for parsing:
 
@@ -91,6 +98,8 @@ REASONING: [Your explanation]
 `;
 
   // Ask HAI for assessment
+  // more info about promptHai https://docs.hackerone.com/en/articles/9653528-creating-and-running-automations
+  // it doesn't look like there is a way to disable logging when polling for the response, the helper method does the logging
   const haiResponse = await promptHai(
     promptMessage,
     {
@@ -99,22 +108,38 @@ REASONING: [Your explanation]
     }
   );
 
-  if (debug) console.log("DEBUG - haiResponse:", JSON.stringify({"haiResponse": haiResponse}));
-
   // 6. Parse HAI's response with more flexible regex
   // HAI doesn't always return in exact format, so we need flexible parsing
   const { severity, reasoning } = parseHaiResponse(haiResponse);
 
-  console.log("parsed severity:", severity);
-  console.log("parsed reasoning:", reasoning);
+  if (debug) {
+    console.log("DEBUG - parsed severity:", severity);
+    console.log("DEBUG - parsed reasoning:", reasoning);
+  }
 
   // 7. Take action based on HAI's assessment
   if (severity) {
     const severityMessage = `Automated severity assessment: This report was automatically classified as ${severity} severity.\n\n${haiResponse}`;
-    if (dryRun) {
-      console.log(`[DRY-RUN] Report ${data.reportId} would have severity set to ${severity}`);
-      console.log(`[DRY-RUN] Internal comment that would be added about automated severity assessment : ${JSON.stringify({"severityMessage": severityMessage})}`);
-    } else {
+    
+    console.log(`[DRY-RUN] Report ${data.reportId} would have severity set to ${severity}`);
+    
+    // Add an internal comment about the automated assessment
+    // https://api.hackerone.com/customer-resources/#reports-create-comment
+    const commentResponse = await apiPost(`/reports/${data.reportId}/activities`,
+      JSON.stringify({
+        data: {
+          type: "activity-comment",
+          attributes: {
+            message: severityMessage,
+            internal: true
+          }
+        }
+      })
+    );
+
+    if (debug) console.log("DEBUG - commentResponse:", JSON.stringify(commentResponse, null, 2));
+
+    if (!dryRun) {
       // Set the severity field on the report
       // https://api.hackerone.com/customer-resources/#reports-update-severity
       const severityResponse = await apiPut(`/reports/${data.reportId}/severities`,
@@ -128,22 +153,8 @@ REASONING: [Your explanation]
           }
         })
       );
+      
       if (debug) console.log("DEBUG - severityResponse:", JSON.stringify(severityResponse, null, 2));
-
-      // Add an internal comment about the automated assessment
-      // https://api.hackerone.com/customer-resources/#reports-create-comment
-      const commentResponse = await apiPost(`/reports/${data.reportId}/activities`,
-        JSON.stringify({
-          data: {
-            type: "activity-comment",
-            attributes: {
-              message: severityMessage,
-              internal: true
-            }
-          }
-        })
-      );
-      if (debug) console.log("DEBUG - commentResponse:", JSON.stringify(commentResponse, null, 2));
 
       console.log(`Report ${data.reportId} severity set to ${severity}`);
     }
