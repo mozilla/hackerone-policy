@@ -34,20 +34,44 @@ exports.run = async ({data, config, apiGet, apiPost, apiPut, promptHai}) => {
   }
 
   console.log(`Processing report ${data.reportId} in ${dryRun ? "DRY-RUN" : "PRODUCTION"} mode`);
+
+  const report = data.report;
+  const program = report.relationships.program;
+  const programId = program.data.id;
+
   if (debug) console.log("DEBUG - input data:", JSON.stringify(data, null, 2));
- 
+
+  // Fetch scope exclusions
+  const scopeExclusionsRes = await apiGet(`/programs/${programId}/scope_exclusions`);
+
+  // Format the exclusions for your prompt
+  let exclusionsText = "";
+  if (scopeExclusionsRes.data && scopeExclusionsRes.data.length > 0) {
+    exclusionsText = scopeExclusionsRes.data.map(exclusion => {
+      const category = exclusion.attributes.category;
+      const details = exclusion.attributes.details;
+      return `- ${category}: ${details}`;
+    }).join("\n");
+  }
 
   // 2. Prepare context and ask HAI for assessment
   const promptMessage = `
 Using the "Severity Definitions and Examples" section in the Mozilla program policy, assess the severity of security vulnerability report #${data.reportId}. The 4 severities are Critical, High, Medium and Low.
+
+**Scope Exclusions from Mozilla's program page:**
+
+${exclusionsText}
 
 Consider:
 - Prerequisites for exploitation (authentication, permissions, user interaction)
 - Demonstrated vs theoretical impact (code analysis vs working PoC)
 - Whether the vulnerability bypasses actual security enforcement or affects advisory/informational elements
 - Mozilla's impact and likelihood definitions and matrix
+- Scope exclusions listed above
+- Hackerone's Core ineligible findings https://docs.hackerone.com/en/articles/8494488-core-ineligible-findings
 
 Critical Rules:
+- First check if the vulnerability falls under scope exclusions or core ineligible findings - if yes, severity should be "None"
 - Disregard the severity the reporter asserts - use only Mozilla's definitions and examples
 - Prioritize practical demonstrated impact over theoretical code analysis
 - Consider the full exploitation context and real-world feasibility
@@ -60,10 +84,11 @@ Provide your assessment in this exact format for parsing:
 SEVERITY: [Critical/High/Medium/Low/None]
 
 REASONING: [Provide a brief explanation in 3-4 concise sentences covering:
-1. What the vulnerability technically allows and prerequisites
-2. Whether impact is demonstrated or theoretical, and if it bypasses actual security controls
-3. How this maps to Mozilla's impact and likelihood levels
-4. Final severity per Mozilla's matrix]
+1. Whether the issue falls under scope exclusions or core ineligible findings (if applicable)
+2. What the vulnerability technically allows and prerequisites
+3. Whether impact is demonstrated or theoretical, and if it bypasses actual security controls
+4. How this maps to Mozilla's impact and likelihood levels
+5. Final severity per Mozilla's matrix]
 `;
 
   // Ask HAI for assessment
